@@ -1,39 +1,30 @@
 <!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset='UTF-8'>
-            <title>Tasker Java</title>
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        </head>
-        <body>
-            <div class="container">
-                <div class="jumbotron">
-                    <h1>LISTA DE TASCAS</h1>
-                </div>
-                <div class="row">
-                    <table class="table table-striped">
-                        {{#tascas}}
-                            <tr>
-                                <td>
-                                    <p {{#isMarcado}} style="text-decoration:line-through;"{{/isMarcado}}>
-                                        <input type="checkbox" name="anteriores" value="{{tarea}}" {{#isMarcado}} checked{{/isMarcado}}> {{tarea}} </input>
-                                    </p>
-                                </td>
-                            </tr>
-                        {{/tascas}}
-                    </table>
-                </div>
-
-                <div class="row">
-                    <form method="POST" action="">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Introducir tasca" name="tasca" aria-describedby="basic-addon">
-                        </div>
-                        <button class="btn btn-success" type="submit">
-                            <span>Enviar</span>
-                        </button>
-                    </form>
-                </div>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TaskerSpark</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron"><h1>Lista de Tascas</h1></div>
+    <ul>
+        <form method="POST" action="">
+            <table class="table table-striped">
+                {{#tascas}}
+                    <tr><td><p><input type="checkbox" name="anteriores" value="{{tarea}}" {{#isMarcado}} checked{{/isMarcado}}> {{tarea}} </input> </p></td></tr>
+                {{/tascas}}
+            </table>
+            <br/>
+            <hr>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Introdusca su Tasca" name="tasca" aria-describedby="basic-addon2">
             </div>
-        </body>
-    </html>
+            <br/>
+            <button class="btn btn-success" type="submit"></span> Enviar</button>
+
+        </form>
+        </ul>
+    </div>
+</body>
+</html>

@@ -21,6 +21,7 @@ public class App {
                 tasca.setMarcado(false);
             }
             if(tareascompletadas !=null){
+                System.out.println("tareas completadas ");
                 for(int i = 0; i<tareascompletadas.length;i++) {
                     for (Tasca tasca : listatascas) {
                         if (tasca.getTarea().equals(tareascompletadas[i])) {
@@ -30,7 +31,7 @@ public class App {
                 }
             }
             String nuevaTasca = req.queryParams("tasca");
-            if(!nuevaTasca.equals("")){
+            if(!(nuevaTasca.equals(""))){
                 listatascas.add(new Tasca(req.queryParams("tasca")));
                 tascas.put("tascas",listatascas);
             }
